@@ -1,0 +1,44 @@
+{
+	"name": "vsdc-RS-POC",
+	"image": "mcr.microsoft.com/devcontainers/rust",
+	"features": {
+		"ghcr.io/devcontainers/features/nix": {
+			"multiUser": true,
+			"version": "latest",
+			"packages": "jq,yq-go,step-cli,croc,ffsend,gh,shellcheck,go-task,rclone,dos2unix,tmux,oh-my-posh,vim"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"redhat.vscode-yaml",
+				"rust-lang.rust-analyzer",
+				"serayuzgur.crates",
+				"tamasfe.even-better-toml",
+				"usernamehw.errorlens"
+			]
+		},
+		"settings": {
+			"lldb.verboseLogging": true,
+			"rust-analyzer.check.command": "clippy",
+			"rust-analyzer.linkedProjects": [
+				"./Cargo.toml"
+			],
+			"[rust]": {
+				"editor.defaultFormatter": "rust-lang.rust-analyzer",
+				"editor.formatOnSave": true
+			},
+			"search.exclude": {
+				"**/target": true
+			},
+			"terminal.integrated.defaultProfile.linux": "zsh",
+			"yaml.completion": true,
+			"yaml.format.bracketSpacing": true,
+			"yaml.format.enable": true,
+			"yaml.format.singleQuote": true,
+			"yaml.hover": true,
+			"yaml.validate": true
+		}
+	}
+}
